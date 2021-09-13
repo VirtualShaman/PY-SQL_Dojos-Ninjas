@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos & Ninjas</title>
+</head>
+<body>
+    <form action="/newninjas" method="POST">
+
+        <label for="">Dojo</label>
+        <select name="dojo_id">
+            {% for dojo in dojos %}
+                <option value="{{ dojo.id }}">{{ dojo.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="">First Name</label>
+        <input type="text" name="first_name">
+        <br>
+        <label for="">Last Name</label>
+        <input type="text" name="last_name">
+        <br>
+        <label for="">Age</label>
+        <input type="number" name="age">
+        <br>
+        <input type="submit" value="Recruit Ninja">
+
+    </form>
+    <button onclick="location.href='/'">Home</button>
+</body>
+</html>
